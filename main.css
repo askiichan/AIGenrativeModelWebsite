@@ -1,0 +1,98 @@
+.img-container {
+    width: 390px;
+    height: 650px;
+    position: relative;
+    left: calc(50% - 195px);
+}
+
+.image {
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.before {
+    width: 50%;
+    z-index: 2;
+}
+
+.after {
+    width: 100%;
+    z-index: 1;
+}
+
+input.slider {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    background-color: transparent;
+    position: absolute;
+    margin: 0px;
+    z-index: 3;
+    cursor: pointer;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    transition: 0.25s all ease-in-out;
+    -moz-transition: 0.25s all ease-in-out;
+    -webkit-transition: 0.25s all ease-in-out;
+    z-index: 4;
+}
+
+input.slider::-moz-range-thumb {
+    width: 6px;
+    height: 600px;
+    background-color: white;
+    cursor: pointer;
+}
+
+input.slider::-webkit-slider-thumb {
+    width: 3px;
+    height: 650px;
+    background-color: white;
+    cursor: pointer;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+.slider-button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    -moz-broder-radius: 50%;
+    -webkit-border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    top: calc(50% - 18px);
+    left: calc(50% - 18px);
+    cursor: pointer;
+    z-index: 3;
+}
+
+.slider-button:before {
+    color: #555;
+    position: absolute;
+    top: 3px;
+    left: 0px;
+    content: "\2B9C";
+}
+
+.slider-button:after {
+    color: #555;
+    position: absolute;
+    top: 3px;
+    right: 0px;
+    content: "\2B9E";
+}
+
+@media (max-width: 767px) {
+    .container {
+        width: 100%;
+        height: 250px;
+    }
+}
