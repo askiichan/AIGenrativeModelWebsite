@@ -117,8 +117,8 @@ img {vertical-align: middle;}
 <!-- Photo Grid -->
 
     <div class="img-container">
-      <img class="image before" id="image-before" style="background-image:url('sample1_img1_before.png');">
-      <img class="image after" id="image-after" style="background-image:url('sample1_img1_after.png');">
+      <img class="image before" id="image-before" style="background-image:url('sample2_img1_before.png');">
+      <img class="image after" id="image-after" style="background-image:url('sample2_img1_after.png');">
       <input type="range" class="slider" min="1" max="100" value="50" />
       <div class="slider-button"></div>
     </div>
@@ -205,19 +205,32 @@ function currentSlide(n) {
 }
 
 function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
+  switch(n) {
+  case 2:
+    document.getElementById('image-before').style.backgroundImage="url(sample2_img1_before.png)"
+    document.getElementById('image-after').style.backgroundImage="url(sample2_img1_after.png)"
+    break;
+  case 3:
+    document.getElementById('image-before').style.backgroundImage="url(sample3_img1_before.png)"
+    document.getElementById('image-after').style.backgroundImage="url(sample3_img1_after.png)"
+    break;
+  default:
+    document.getElementById('image-before').style.backgroundImage="url(sample1_img1_before.png)"
+    document.getElementById('image-after').style.backgroundImage="url(sample1_img1_after.png)"
+}
+  // let i;
+  // let slides = document.getElementsByClassName("mySlides");
+  // let dots = document.getElementsByClassName("dot");
+  // if (n > slides.length) {slideIndex = 1}    
+  // if (n < 1) {slideIndex = slides.length}
+  // for (i = 0; i < slides.length; i++) {
+  //   slides[i].style.display = "none";  
+  // }
+  // for (i = 0; i < dots.length; i++) {
+  //   dots[i].className = dots[i].className.replace(" active", "");
+  // }
+  // slides[slideIndex-1].style.display = "block";  
+  // dots[slideIndex-1].className += " active";
 }
 
 // Open and close sidebar
